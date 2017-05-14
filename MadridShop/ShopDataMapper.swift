@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import UIKit
 
 extension Shop {
     func shopCoreData(context: NSManagedObjectContext) -> ShopCoreData {
@@ -17,16 +18,17 @@ extension Shop {
         s.desription_es = self.esDescription
         s.gps_lat = self.gpsLatitude
         s.gps_lon = self.gpsLongitude
+        do {
+            let data = try Data(contentsOf: imageString)
+            s.image = data as NSData?
+        } catch {
+            
+        }
+
+
         
         return s
         
     }
     
-//    func shopsData(shops: Shops) -> [ShopCoreData] {
-//        let shopsData = [ShopCoreData]()
-//        for shop in shops {
-//            
-//        }
-//        return shopsData
-//    }
 }

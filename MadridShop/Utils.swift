@@ -27,3 +27,4 @@ enum JSONErrors : Error{
 
 //MARK: - Config
 public let API_URL = "https://madrid-shops.com/json_new/getShops.php"
+public let DATA_BASE = "MadridShop"

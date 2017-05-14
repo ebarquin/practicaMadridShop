@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Core Data Initializaion
-        let container = persistentContainer(dbName: "MadridShop") { (error: NSError) in
+        let container = persistentContainer(dbName: DATA_BASE) { (error: NSError) in
             fatalError("Unresolved error \(error), \(error.userInfo)")
         }
         self.context = container.viewContext
