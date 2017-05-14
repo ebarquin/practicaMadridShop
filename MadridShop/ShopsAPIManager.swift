@@ -23,7 +23,7 @@ public class ShopsAPIManager {
 //                let jsonDicts = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONArray
 //                let shops = try decode(shops: jsonDicts)
 
-                let shop1 = Shop(name: "", enDescription: "", esDescription: "", gpsLatitude: "", gpsLongitude: "", imageString: URL(string: "http://www.google.com")!)
+                let shop1 = Shop(name: "", enDescription: "", esDescription: "", gpsLatitude: 0.1235, gpsLongitude: 0.124568, imageString: URL(string: "http://www.google.com")!)
                 let shops: [Shop] = [shop1]
                 completion(shops)
             } catch {

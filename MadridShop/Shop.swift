@@ -12,11 +12,11 @@ public class Shop {
     let name: String
     let enDescription: String
     let esDescription: String
-    let gpsLatitude: String
-    let gpsLongitude: String
+    let gpsLatitude: Double
+    let gpsLongitude: Double
     let imageString: URL
     
-    init(name: String, enDescription: String, esDescription: String, gpsLatitude: String, gpsLongitude: String, imageString: URL) {
+    init(name: String, enDescription: String, esDescription: String, gpsLatitude: Double, gpsLongitude: Double, imageString: URL) {
         self.name = name
         self.enDescription = enDescription
         self.esDescription = esDescription
