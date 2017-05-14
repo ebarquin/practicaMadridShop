@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C27A1581EC5B32E00E1B79C /* ShopsInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27A1571EC5B32E00E1B79C /* ShopsInteractorImpl.swift */; };
+		9C27A15A1EC5B62700E1B79C /* PersistShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27A1591EC5B62700E1B79C /* PersistShopsInteractor.swift */; };
+		9C27A15C1EC5B76800E1B79C /* PersistShopInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27A15B1EC5B76800E1B79C /* PersistShopInteractorImpl.swift */; };
+		9C27A15E1EC5BA9A00E1B79C /* ShopDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27A15D1EC5BA9A00E1B79C /* ShopDataMapper.swift */; };
+		9C27A1601EC5C4E600E1B79C /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C27A15F1EC5C4E600E1B79C /* CoreDataUtils.swift */; };
 		9CA107EE1EC4A3880086D867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA107ED1EC4A3880086D867 /* AppDelegate.swift */; };
 		9CA107F01EC4A3880086D867 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA107EF1EC4A3880086D867 /* MainViewController.swift */; };
 		9CA107F31EC4A3880086D867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA107F11EC4A3880086D867 /* Main.storyboard */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C27A1571EC5B32E00E1B79C /* ShopsInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsInteractorImpl.swift; sourceTree = "<group>"; };
+		9C27A1591EC5B62700E1B79C /* PersistShopsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistShopsInteractor.swift; sourceTree = "<group>"; };
+		9C27A15B1EC5B76800E1B79C /* PersistShopInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistShopInteractorImpl.swift; sourceTree = "<group>"; };
+		9C27A15D1EC5BA9A00E1B79C /* ShopDataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDataMapper.swift; sourceTree = "<group>"; };
+		9C27A15F1EC5C4E600E1B79C /* CoreDataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
 		9CA107EA1EC4A3880086D867 /* MadridShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadridShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA107ED1EC4A3880086D867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA107EF1EC4A3880086D867 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA108141EC4D7BC0086D867 /* DataMappers */,
+				9CA108151EC4D7DE0086D867 /* JSONProcessing.swift */,
 				9CA107F41EC4A3880086D867 /* MadridShop.xcdatamodeld */,
 				9CA1080C1EC4C4580086D867 /* Shop.swift */,
 			);
@@ -109,6 +120,7 @@
 		9CA108051EC4A9320086D867 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9C27A15F1EC5C4E600E1B79C /* CoreDataUtils.swift */,
 				9CA108061EC4A9610086D867 /* Utils.swift */,
 			);
 			name = Utils;
@@ -117,7 +129,10 @@
 		9CA1080E1EC4C9B70086D867 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				9C27A1571EC5B32E00E1B79C /* ShopsInteractorImpl.swift */,
 				9CA108101EC4C9F10086D867 /* ShopsInteractor.swift */,
+				9C27A1591EC5B62700E1B79C /* PersistShopsInteractor.swift */,
+				9C27A15B1EC5B76800E1B79C /* PersistShopInteractorImpl.swift */,
 			);
 			name = Interactors;
 			sourceTree = "<group>";
@@ -133,7 +148,7 @@
 		9CA108141EC4D7BC0086D867 /* DataMappers */ = {
 			isa = PBXGroup;
 			children = (
-				9CA108151EC4D7DE0086D867 /* JSONProcessing.swift */,
+				9C27A15D1EC5BA9A00E1B79C /* ShopDataMapper.swift */,
 			);
 			name = DataMappers;
 			sourceTree = "<group>";
@@ -211,14 +226,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C27A15C1EC5B76800E1B79C /* PersistShopInteractorImpl.swift in Sources */,
 				9CA108071EC4A9610086D867 /* Utils.swift in Sources */,
 				9CA107F61EC4A3880086D867 /* MadridShop.xcdatamodeld in Sources */,
 				9CA107F01EC4A3880086D867 /* MainViewController.swift in Sources */,
+				9C27A15E1EC5BA9A00E1B79C /* ShopDataMapper.swift in Sources */,
+				9C27A1581EC5B32E00E1B79C /* ShopsInteractorImpl.swift in Sources */,
 				9CA1080D1EC4C4580086D867 /* Shop.swift in Sources */,
 				9CA108131EC4CEAB0086D867 /* ShopsAPIManager.swift in Sources */,
 				9CA108111EC4C9F10086D867 /* ShopsInteractor.swift in Sources */,
 				9CA108161EC4D7DE0086D867 /* JSONProcessing.swift in Sources */,
 				9CA107EE1EC4A3880086D867 /* AppDelegate.swift in Sources */,
+				9C27A15A1EC5B62700E1B79C /* PersistShopsInteractor.swift in Sources */,
+				9C27A1601EC5C4E600E1B79C /* CoreDataUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

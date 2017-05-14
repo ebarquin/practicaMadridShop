@@ -13,6 +13,8 @@ public typealias Shops = [Shop]
 public typealias JSONObject = String
 public typealias JSONDictionary = [String : JSONObject]
 public typealias JSONArray = [JSONDictionary]
+public typealias ErrorClosure = (Error) -> Void
+public typealias EmptyClosure = () -> Void
 
 //MARK: - Errors
 enum JSONErrors : Error{
@@ -22,7 +24,6 @@ enum JSONErrors : Error{
     case emptyJSONArray
 }
 
-public typealias ErrorClosure = (Error) -> Void
 
 //MARK: - Config
-public let API_URL = "http://madrid-shops.com/json_new/getShops.php"
+public let API_URL = "https://madrid-shops.com/json_new/getShops.php"

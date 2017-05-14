@@ -3,8 +3,8 @@
     <entity name="ShopCoreData" representedClassName="ShopCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="description_en" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desription_es" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="gps_lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="gps_lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="gps_lat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gps_lon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>

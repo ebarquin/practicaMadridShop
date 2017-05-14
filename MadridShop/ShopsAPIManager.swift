@@ -19,10 +19,12 @@ public class ShopsAPIManager {
         let urlString = API_URL
         if let url = URL(string: urlString) {
             do {
-                let data = try Data(contentsOf: url)
-                let jsonDicts = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONArray
-                let shops = try decode(shops: jsonDicts)
-                
+//                let data = try Data(contentsOf: url)
+//                let jsonDicts = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONArray
+//                let shops = try decode(shops: jsonDicts)
+
+                let shop1 = Shop(name: "", enDescription: "", esDescription: "", gpsLatitude: "", gpsLongitude: "", imageString: URL(string: "http://www.google.com")!)
+                let shops: [Shop] = [shop1]
                 completion(shops)
             } catch {
                 if let errorClosure = onError {
