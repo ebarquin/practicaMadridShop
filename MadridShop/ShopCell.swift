@@ -11,6 +11,7 @@ import UIKit
 class ShopCell: UITableViewCell {
     @IBOutlet weak var shopAddress: UILabel!
     @IBOutlet weak var shopName: UILabel!
+    @IBOutlet weak var shopImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

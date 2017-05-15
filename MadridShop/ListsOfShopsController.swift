@@ -36,6 +36,11 @@ public class ListOfShopsController: UIViewController, NSFetchedResultsController
     func configureCell(_ cell: ShopCell, withShop shop: ShopCoreData) {
         cell.shopName!.text = shop.name
         cell.shopAddress!.text = shop.address
+        if let imageCell = UIImage(data: shop.image as! Data) {
+            cell.shopImage.image = imageCell
+
+        }
+        
     }
 
     
