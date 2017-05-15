@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
+    var context: NSManagedObjectContext?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! UINavigationController
+        let nextViewController = destinationVC.viewControllers[0] as! ListOfShopsController
+        
+        nextViewController.context = self.context
 
     }
 }

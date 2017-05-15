@@ -15,13 +15,15 @@ public class Shop {
     let gpsLatitude: Double
     let gpsLongitude: Double
     let imageString: URL
+    let address: String
     
-    init(name: String, enDescription: String, esDescription: String, gpsLatitude: Double, gpsLongitude: Double, imageString: URL) {
+    init(name: String, enDescription: String, esDescription: String, gpsLatitude: Double, gpsLongitude: Double, imageString: URL, address: String) {
         self.name = name
         self.enDescription = enDescription
         self.esDescription = esDescription
         self.gpsLatitude = gpsLatitude
         self.gpsLongitude = gpsLongitude
         self.imageString = imageString
+        self.address = address
     }
 }

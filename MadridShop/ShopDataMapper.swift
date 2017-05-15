@@ -18,6 +18,7 @@ extension Shop {
         s.desription_es = self.esDescription
         s.gps_lat = self.gpsLatitude
         s.gps_lon = self.gpsLongitude
+        s.address = self.address
         do {
             let data = try Data(contentsOf: imageString)
             s.image = data as NSData?

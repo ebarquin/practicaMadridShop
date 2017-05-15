@@ -28,7 +28,8 @@ public class ShopsAPIManager {
                                  esDescription: "Una extensa red de tiendas distribuidas por cuatro continentes convierte a Grupo Cortefiel en una de las principales compañías europeas del sector moda. A través de sus cuatro cadenas –Cortefiel, Pedro del Hierro, Springfield y Women’secret-, el Grupo está presente en 58 países con 1.647 puntos de venta.",
                                  gpsLatitude: 40.4180563,
                                  gpsLongitude: -3.7010172999999895,
-                                 imageString: URL(string: "https://madrid-shops.com/media/shops/cortefiel-small.jpg")!)
+                                 imageString: URL(string: "https://madrid-shops.com/media/shops/cortefiel-small.jpg")!,
+                                 address: "Puerta del Sol 11" )
                 let shops: [Shop] = [shop1]
                 completion(shops)
             } catch {
