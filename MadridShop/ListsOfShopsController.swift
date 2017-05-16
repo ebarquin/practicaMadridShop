@@ -12,7 +12,7 @@ import CoreData
 
 public class ListOfShopsController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     var context: NSManagedObjectContext? = nil
-    
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: - TableView
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,4 +68,21 @@ public class ListOfShopsController: UIViewController, NSFetchedResultsController
     }
     
     var _fetchResultsController: NSFetchedResultsController<ShopCoreData>? = nil
+    
+    
+    //MARK: - Segue
+    
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //Context injection
+        let vc = segue.destination as! ShopDetailViewController
+        vc.context = self.context
+        
+        //Shop Injection
+        let indexPath = tableView.indexPathsForSelectedRows?.first
+        let shop = fetchResultsController.object(at: indexPath!)
+        vc.shop = shop
+        
+        
+    }
 }

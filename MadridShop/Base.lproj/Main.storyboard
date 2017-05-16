@@ -67,7 +67,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3wU-5U-jDQ" id="dw9-SV-0FU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eA-A9-bZu">
@@ -125,15 +125,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Madrid Shops" id="pOi-if-GN7"/>
+                    <connections>
+                        <outlet property="tableView" destination="25Z-xw-Qqt" id="jQY-Vw-D71"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2u-bp-r9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632.8" y="111.99400299850076"/>
         </scene>
-        <!--View Controller-->
+        <!--Shop Detail View Controller-->
         <scene sceneID="VMo-BZ-KSe">
             <objects>
-                <viewController id="Y3V-uV-pLC" sceneMemberID="viewController">
+                <viewController id="Y3V-uV-pLC" customClass="ShopDetailViewController" customModule="MadridShop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GUH-Ze-K7M"/>
                         <viewControllerLayoutGuide type="bottom" id="222-0B-uvJ"/>
@@ -163,7 +166,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-YO-sVA">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="store" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-YO-sVA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.72156862749999995" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -171,6 +174,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="shopAddress" destination="jU7-Lj-hXK" id="cr5-Ib-XGi"/>
+                        <outlet property="shopDescription" destination="CPq-lF-xcp" id="rXD-Mf-qdu"/>
+                        <outlet property="shopImage" destination="tPA-YO-sVA" id="Xhz-JO-7Dt"/>
+                        <outlet property="shopName" destination="GAT-P3-pvV" id="fAZ-Vd-fJV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cux-pF-1fS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,4 +204,7 @@
             <point key="canvasLocation" x="863" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="store" width="128" height="128"/>
+    </resources>
 </document>
