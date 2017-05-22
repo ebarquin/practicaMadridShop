@@ -53,7 +53,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bEd-U9-qsa">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEd-U9-qsa">
                                 <rect key="frame" x="0.0" y="72" width="375" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51372549020000002" green="0.69411764710000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,7 +67,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3wU-5U-jDQ" id="dw9-SV-0FU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eA-A9-bZu">
@@ -126,6 +126,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Madrid Shops" id="pOi-if-GN7"/>
                     <connections>
+                        <outlet property="mapView" destination="bEd-U9-qsa" id="zBM-1a-1H0"/>
                         <outlet property="tableView" destination="25Z-xw-Qqt" id="jQY-Vw-D71"/>
                     </connections>
                 </viewController>

@@ -8,11 +8,26 @@
 
 import UIKit
 import CoreData
+import CoreLocation
+import MapKit
 
 
-public class ListOfShopsController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+public class ListOfShopsController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager?
+
     var context: NSManagedObjectContext? = nil
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    public override func viewDidLoad() {
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+        locationManager?.startUpdatingLocation()
+        mapSetCenter()
+    }
+
     
     //MARK: - TableView
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -83,6 +98,16 @@ public class ListOfShopsController: UIViewController, NSFetchedResultsController
         let shop = fetchResultsController.object(at: indexPath!)
         vc.shop = shop
         
+        
+    }
+    
+    //MARK: - Utils
+    func mapSetCenter() {
+        let madridLocation = CLLocation(latitude: 40.416775, longitude: -3.703790)
+        //Create region
+        let madridRegion = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpanMake(0.2, 0.2))
+        self.mapView.setRegion(madridRegion, animated: true)
+        //self.mapView.setCenter(madridLocation.coordinate, animated: true)
         
     }
 }
