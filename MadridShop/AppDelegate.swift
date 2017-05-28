@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Check if it's the first time
         let dataDownloaded = UserDefaults.standard.value(forKey: "DataDownloaded")
-        if dataDownloaded == nil {
+        if dataDownloaded != nil {
             let getAllShops = ShopsAPIManager()
             ShopsInteractorImpl(shopsAPIManager: getAllShops).execute(completion: { (shops) in
                 PersistShopsInteractorImpl(context: self.context!).execute(shops: shops, completion: { (shops: [ShopCoreData]) in

@@ -21,13 +21,13 @@ func decode(shop dict:JSONDictionary) throws -> Shop {
     
     //parsing
     let name = extract(key: "name")
-    let enDescription = extract(key:  "enDescription")
-    let esDescription = extract(key: "esDescription")
-    let imageString = URL(string: extract(key: "imageString"))!
+    let enDescription = extract(key:  "description_en")
+    let esDescription = extract(key: "description_es")
+    let imageString = URL(string: extract(key: "img"))!
     let address = extract(key: "address")
     //TODO: Convert long and lat in float
-    let gpsLatitude = Double(extract(key: "gpsLatitude"))
-    let gpsLongitude = Double(extract(key: "gpslongitude"))
+    let gpsLatitude = Double(extract(key: "gps_lat"))
+    let gpsLongitude = Double(extract(key: "gps_lon"))
     
     return Shop(name: name, enDescription: enDescription, esDescription: esDescription, gpsLatitude: gpsLatitude!, gpsLongitude: gpsLongitude!, imageString: imageString, address: address)
     

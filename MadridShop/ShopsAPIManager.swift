@@ -10,33 +10,33 @@ import Foundation
 
 public class ShopsAPIManager {
     
-    public func downloadShops(completion: (Shops) -> Void){
+    public func downloadShops(completion: @escaping (Shops) -> Void){
         downloadShops(completion: completion, onError: nil)
     }
     
-    public func downloadShops(completion: (Shops) -> Void, onError: ErrorClosure? = nil) {
+    public func downloadShops(completion: @escaping (Shops) -> Void, onError: ErrorClosure? = nil) {
         
         let urlString = API_URL
         if let url = URL(string: urlString) {
-            do {
-//                let data = try Data(contentsOf: url)
-//                let jsonDicts = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONArray
-//                let shops = try decode(shops: jsonDicts)
-
-                let shop1 = Shop(name: "Cortefiel - Preciados",
-                                 enDescription: "An extensive network of stores spread across four continents makes Cortefiel Group one of the leading European companies in the fashion industry.  Through its four chains -Cortefiel, Pedro del Hierro, Springfield and Women'secret-, the Group operates in 58 countries with 1,647 points of sale. ",
-                                 esDescription: "Una extensa red de tiendas distribuidas por cuatro continentes convierte a Grupo Cortefiel en una de las principales compañías europeas del sector moda. A través de sus cuatro cadenas –Cortefiel, Pedro del Hierro, Springfield y Women’secret-, el Grupo está presente en 58 países con 1.647 puntos de venta.",
-                                 gpsLatitude: 40.4180563,
-                                 gpsLongitude: -3.7010172999999895,
-                                 imageString: URL(string: "https://madrid-shops.com/media/shops/cortefiel-small.jpg")!,
-                                 address: "Puerta del Sol 11" )
-                let shops: [Shop] = [shop1]
-                completion(shops)
-            } catch {
-                if let errorClosure = onError {
-                    errorClosure(error)
+            let session = URLSession.shared
+            let task = session.dataTask(with: url, completionHandler: { (data:Data?, response:URLResponse?, error:Error?) in
+                do {
+                    if let data = data {
+                        let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: JSONArray]
+                        let shopJson = json?["result"]
+                        let shops = try decode(shops: shopJson)
+                        completion(shops)
+                    }
+                    
+                } catch {
+                    if let errorClosure = onError {
+                        errorClosure(error)
+                    }
                 }
-            }
+
+            })
+         
+            task.resume()
             
         }
         
