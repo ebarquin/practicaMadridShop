@@ -10,26 +10,25 @@ import UIKit
 
 //MARK: - Decodification
 func decode(shop dict:JSONDictionary) throws -> Shop {
-    
     //validate first
-    try validate(dictionary: dict)
+    // try validate(dictionary: dict)
     
     //extract from dict
     func extract(key: String) -> String {
-        return dict[key]! //We know it can´t be messing  because we validated first!
+        return dict[key]! as! String //We know it can´t be messing  because we validated first!
     }
     
     //parsing
     let name = extract(key: "name")
     let enDescription = extract(key:  "description_en")
     let esDescription = extract(key: "description_es")
-    let imageString = URL(string: extract(key: "img"))!
+    let imageString = URL(string: extract(key: "img")) ?? URL(string: "http://www.google.es")
     let address = extract(key: "address")
     //TODO: Convert long and lat in float
     let gpsLatitude = Double(extract(key: "gps_lat"))
     let gpsLongitude = Double(extract(key: "gps_lon"))
     
-    return Shop(name: name, enDescription: enDescription, esDescription: esDescription, gpsLatitude: gpsLatitude!, gpsLongitude: gpsLongitude!, imageString: imageString, address: address)
+    return Shop(name: name, enDescription: enDescription, esDescription: esDescription, gpsLatitude: gpsLatitude ?? 0, gpsLongitude: gpsLongitude ?? 0, imageString: imageString!, address: address)
     
 }
 func decode(shop dict: JSONDictionary?) throws -> Shop{
@@ -74,8 +73,8 @@ func validate(dictionary dict: JSONDictionary) throws{
             guard let value = dict[key] else{
                 throw JSONErrors.missingField(name: key)
             }
-            guard value.characters.count > 0  else {
-                throw JSONErrors.incorrectValue(name: key, value: value)
+            guard (value as! String).characters.count > 0  else {
+                throw JSONErrors.incorrectValue(name: key, value: value as! String)
             }
         }
         

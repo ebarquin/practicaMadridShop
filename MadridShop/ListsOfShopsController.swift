@@ -97,8 +97,6 @@ public class ListOfShopsController: UIViewController, NSFetchedResultsController
         let indexPath = tableView.indexPathsForSelectedRows?.first
         let shop = fetchResultsController.object(at: indexPath!)
         vc.shop = shop
-        
-        
     }
     
     //MARK: - Utils

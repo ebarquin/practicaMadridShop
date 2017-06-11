@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         self.context = container.viewContext
         
+    
+        
+        
         //Check if it's the first time
         let dataDownloaded = UserDefaults.standard.value(forKey: "DataDownloaded")
         if dataDownloaded != nil {
@@ -48,7 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func injectContextToFirstViewController() {
-        if let initialViewController = window?.rootViewController as? MainViewController
+        if let nav = window?.rootViewController as? UINavigationController,
+           let initialViewController = nav.viewControllers[0] as? MainViewController
         {
             initialViewController.context = self.context
         }

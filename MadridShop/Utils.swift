@@ -11,7 +11,7 @@ import Foundation
 //MARK: - TypeAliasses
 public typealias Shops = [Shop]
 public typealias JSONObject = String
-public typealias JSONDictionary = [String : JSONObject]
+public typealias JSONDictionary = Dictionary<String, Any> // [String: String]
 public typealias JSONArray = [JSONDictionary]
 public typealias ErrorClosure = (Error) -> Void
 public typealias EmptyClosure = () -> Void

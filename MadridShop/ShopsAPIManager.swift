@@ -22,8 +22,8 @@ public class ShopsAPIManager {
             let task = session.dataTask(with: url, completionHandler: { (data:Data?, response:URLResponse?, error:Error?) in
                 do {
                     if let data = data {
-                        let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: JSONArray]
-                        let shopJson = json?["result"]
+                        let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONDictionary
+                        let shopJson = json?["result"] as! JSONArray
                         let shops = try decode(shops: shopJson)
                         completion(shops)
                     }

@@ -17,8 +17,9 @@ public class PersistShopsInteractorImpl: PersistShopsInteractor {
     }
     
     public func execute(shops: Shops, completion:@escaping([ShopCoreData]) -> Void) {
-        
+        execute(shops: shops, completion: completion, onError: nil)
     }
+    
     public func execute(shops: Shops, completion:@escaping([ShopCoreData]) -> Void, onError: ErrorClosure?) {
         var shopsData = [ShopCoreData]()
         shops.forEach { (shop:Shop) in

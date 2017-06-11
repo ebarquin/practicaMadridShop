@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ShopDetailViewController: UINavigationController {
+class ShopDetailViewController: UIViewController {
     
 
     @IBOutlet weak var shopImage: UIImageView!
@@ -20,19 +20,21 @@ class ShopDetailViewController: UINavigationController {
     
     var context: NSManagedObjectContext? = nil
     var shop: ShopCoreData!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let imageData = UIImage(data: shop.image as! Data) {
-             shopImage.image = imageData
-        }
-       
-        shopName.text = shop.name
-        shopAddress.text = shop.address
-        shopDescription.text = shop.description
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        shopName.text = shop.name
+        shopAddress.text = shop.address
+        shopDescription.text = shop.description_en
+        
+        if  let imageData = UIImage(data: shop.image as! Data) {
+            shopImage.image = imageData
+        }
 
-
+    }
 }

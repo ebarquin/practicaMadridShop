@@ -21,8 +21,8 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //Context Injection to Top View Controller in NavigationController
-        let destinationVC = segue.destination as! UINavigationController
-        let nextViewController = destinationVC.viewControllers[0] as! ListOfShopsController
+     
+        let nextViewController = segue.destination as! ListOfShopsController
         
         nextViewController.context = self.context
 
